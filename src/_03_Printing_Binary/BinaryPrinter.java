@@ -39,7 +39,7 @@ public class BinaryPrinter {
 		bShifted=bShifted&1;
 		System.out.print(bShifted);
 		bShifted=b&1;
-		System.out.println(bShifted);
+		System.out.print(bShifted);
 		
 	}
 	
@@ -78,8 +78,8 @@ public class BinaryPrinter {
 		// Use bit shifting and masking (&) to save the first
 		// 16 bits of i in one short, and the second 16 bits of
 		// i in the other short
-		one=(byte)(i>>16);
-		two=(byte)(i&65535);
+		one=(short)(i>>16);
+		two=(short)(i&65535);
 		// Call printShortBinary twice using the two short variables
 		// Make sure they are in the correct order
 		printShortBinary(one);
@@ -90,8 +90,8 @@ public class BinaryPrinter {
 		// Use the same method as before to complete this method
 		int one;
 		int two;
-		one=(byte)(l>>32);
-		two=(byte)(l&4294967295);
+		one=(int)(l>>32);
+		two=(int)(l&0b11111111111111111111111111111111);
 		printIntBinary(one);
 		printIntBinary(two);
 	}
@@ -103,7 +103,9 @@ public class BinaryPrinter {
 		System.out.println();
 		//bPrint.printShortBinary((byte)(76));
 		System.out.println();
-		bPrint.printIntBinary((byte)(34));
+		//bPrint.printIntBinary((byte)(34));
+		System.out.println();
+		bPrint.printLongBinary(3_074_457_345_488_032_329L);
 		
 	}
 }
